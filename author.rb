@@ -16,7 +16,11 @@ class Author
             |book| book.author == self
         }
     end
-
+    def publishers
+        Publisher.all.select {
+            |publisher| publisher.author == self
+        }
+    end
     def write_book(title, word_count, publisher)
         Book.new(title, self, word_count, publisher)
     end
@@ -41,5 +45,8 @@ class Author
         end
         wordHash.max_by{|k,v| v}
         #binding.pry
+    end
+    def publisherUsedTimes
+
     end
 end

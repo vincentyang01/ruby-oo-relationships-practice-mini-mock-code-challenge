@@ -1,11 +1,12 @@
 require 'pry'
 
 class Publisher
-    attr_accessor :name
+    attr_accessor :name, :author
     @@all = []
 
-    def initialize(name)
+    def initialize(name, author)
         @name = name
+        @author = author
         @@all << self
     end
     def self.all
